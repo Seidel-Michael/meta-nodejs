@@ -40,7 +40,7 @@ oe_runnpm() {
     mkdir -p "${NPM_HOME_DIR}"
 
     export NPM_VERSION="$(${NPM} --v)"
-    export NPM_CACHE_CMD="clean"
+    export NPM_CACHE_CMD="clean --force"
 
     if [ "${NPM_CACHE_DIR}" == "" ]; then
         export NPM_CONFIG_CACHE="${DL_DIR}/npm_v${NPM_VERSION}_${TARGET_ARCH}_cache/${PF}"
