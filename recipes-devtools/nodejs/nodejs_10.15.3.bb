@@ -2,6 +2,8 @@ require nodejs_10.inc
 
 INC_PR = "r1"
 
+PREFERRED_VERSION_openssl = "1.1.%"
+
 LIC_FILES_CHKSUM = "file://LICENSE;md5=9ceeba79eb2ea1067b7b3ed16fff8bab"
 
 SRC_URI[src.md5sum] = "fa0bcf98b918337c0f368bb0674a2489"
