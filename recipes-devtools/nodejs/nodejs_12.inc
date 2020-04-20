@@ -127,6 +127,7 @@ do_install_append_class-native() {
     # use sed on npm-cli.js because otherwise symlink is replaced with normal file and
     # npm-cli.js continues to use old shebang
     sed "1s^.*^#\!/usr/bin/env node^g" -i ${D}${exec_prefix}/lib/node_modules/npm/bin/npm-cli.js
+    sed "1s^.*^#\!/usr/bin/env node^g" -i ${D}${exec_prefix}/lib/node_modules/npm/bin/npx-cli.js
 
     # Install the native binaries to provide it within sysroot for the target compilation
     install -d ${D}${bindir}
@@ -141,6 +142,7 @@ do_install_append_class-native() {
 
 do_install_append_class-target() {
     sed "1s^.*^#\!${bindir}/env node^g" -i ${D}${exec_prefix}/lib/node_modules/npm/bin/npm-cli.js
+    sed "1s^.*^#\!${bindir}/env node^g" -i ${D}${exec_prefix}/lib/node_modules/npm/bin/npx-cli.js
 }
 
 PACKAGES =+ "${PN}-npm"
